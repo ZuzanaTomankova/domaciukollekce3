@@ -26,13 +26,11 @@ public class BookingManager {
     public double getAverageGuests() {
         double totalGuest = 0;
         for (Booking booking : bookingList) {
-            totalGuest += booking.getNumberOfGuests();
+            totalGuest += booking.getNumberOfGuests();}
             double averageGuest = totalGuest / bookingList.size();
 
-            System.out.println("--------------------------------------");
-            System.out.println("Průměrný počet hostů na jednu rezervaci:" + averageGuest);
+        return averageGuest;
 
-        }
     }
 
         public void getNumberOfWorkingBookings (List < Booking > bookingList) {

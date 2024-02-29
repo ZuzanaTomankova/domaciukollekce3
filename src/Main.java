@@ -44,7 +44,9 @@ public class Main {
 
         printEightFirst(bookingList);
 
-        bookingManager.getAverageGuests();
+        System.out.println("----------------------------" );
+
+        System.out.println("Průměrný počet hostů "+bookingManager.getAverageGuests());
 
 
 
