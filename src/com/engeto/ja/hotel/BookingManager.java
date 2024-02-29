@@ -22,10 +22,25 @@ public class BookingManager {
     public void clearBookings() {
         bookingList.clear();
     }
-    public double getAverageGuests(List<Booking> bookingList, List<Guest> otherGuests, List<Guest> guestList) {
-        double averageGuest = (guestList.size()+otherGuests.size())/(double) (bookingList.size());
-        System.out.println("--------------------------------------");
-        System.out.println("Průměrný počet hostů na jednu rezervaci:"+averageGuest);
-        return averageGuest;
+
+    public double getAverageGuests() {
+        double totalGuest = 0;
+        for (Booking booking : bookingList) {
+            totalGuest += booking.getNumberOfGuests();
+            double averageGuest = totalGuest / bookingList.size();
+
+            System.out.println("--------------------------------------");
+            System.out.println("Průměrný počet hostů na jednu rezervaci:" + averageGuest);
+
+        }
     }
-}
+
+        public void getNumberOfWorkingBookings (List < Booking > bookingList) {
+            List<Booking> businessStay = new ArrayList<>();
+            for (Booking booking : bookingList) {
+                if (!booking.isBusinessStay()) businessStay.add(booking);
+            }
+            System.out.println("Počet pracovních pobytů: " + businessStay.size());
+        }
+
+    }
